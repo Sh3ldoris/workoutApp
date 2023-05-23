@@ -1,22 +1,21 @@
-import {Injectable, OnInit} from '@angular/core';
-import {Storage} from "@ionic/storage-angular";
+import { Injectable, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class StorageService {
+    constructor(private storage: Storage) {
+        this.storage.create();
+    }
 
-  constructor(private storage: Storage) {
-    this.storage.create();
-  }
+    getSomeData() {
+        return this.storage.get('HEJ') || [];
+    }
 
-  getSomeData() {
-    return this.storage.get('HEJ') || [];
-  }
-
-  async addData(data: any) {
-    const storedData = await this.storage.get('HEJ') || [];
-    storedData.push(data);
-    return this.storage.set('HEJ', storedData);
-  }
+    async addData(data: any) {
+        const storedData = (await this.storage.get('HEJ')) || [];
+        storedData.push(data);
+        return this.storage.set('HEJ', storedData);
+    }
 }
