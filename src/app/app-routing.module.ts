@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MainRoute } from './common/enums/route.enum';
 
 const routes: Routes = [
     {
-        path: 'home',
-        loadChildren: () => import('./home/home.module').then((m) => m.HomePageModule),
-    },
-    {
         path: '',
-        redirectTo: 'home',
+        redirectTo: MainRoute.WORKOUT,
         pathMatch: 'full',
     },
+    {
+        path: MainRoute.HOME,
+        loadChildren: () => import('./submodules/home/home.module').then((m) => m.HomeModule),
+    },
+    {
+        path: MainRoute.WORKOUT,
+        loadChildren: () => import('./submodules/workout/workout.module').then((m) => m.WorkoutModule),
+    },
+    { path: '**', redirectTo: MainRoute.HOME },
 ];
 
 @NgModule({

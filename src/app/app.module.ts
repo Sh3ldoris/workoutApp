@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+import { AppCommonModule } from './common/app-common.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -17,9 +18,10 @@ import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
         IonicModule.forRoot(),
         AppRoutingModule,
         IonicStorageModule.forRoot({
-            name: 'MyDatabase',
+            name: 'WorkoutDatabase',
             driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB, Drivers.LocalStorage],
         }),
+        AppCommonModule,
     ],
     providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
     bootstrap: [AppComponent],

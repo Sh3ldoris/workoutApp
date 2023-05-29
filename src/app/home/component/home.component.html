@@ -1,15 +1,15 @@
-<ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-title> Domov </ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-    <button class="button" (click)="addData()">Pridat data</button>
 
-    <div class="container">
-        <div class="row" *ngFor="let item of data">
-            <div class="col">{{ item }}</div>
-        </div>
-    </div>
+    <ion-list>
+        <ion-item *ngFor="let example of examples">
+            <ion-label>{{ example.label }} - {{ example.description }}</ion-label>
+        </ion-item>
+    </ion-list>
+
+
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="addData()" color="secondary">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>
