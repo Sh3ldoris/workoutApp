@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
     isHeaderVisible: Observable<boolean> = this.headerService.isHeaderVisible();
+    headerLabel: Observable<string> = this.headerService.getLabel();
 
     constructor(private headerService: HeaderService) {}
 

@@ -4,17 +4,17 @@ import { MainRoute } from './common/enums/route.enum';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: MainRoute.WORKOUT,
-        pathMatch: 'full',
-    },
-    {
         path: MainRoute.HOME,
         loadChildren: () => import('./submodules/home/home.module').then((m) => m.HomeModule),
     },
     {
         path: MainRoute.WORKOUT,
-        loadChildren: () => import('./submodules/workout/workout.module').then((m) => m.WorkoutModule),
+        loadChildren: () => import('./submodules/gym-plan/gym-plan.module').then((m) => m.GymPlanModule),
+    },
+    {
+        path: '',
+        redirectTo: MainRoute.HOME,
+        pathMatch: 'full',
     },
     { path: '**', redirectTo: MainRoute.HOME },
 ];

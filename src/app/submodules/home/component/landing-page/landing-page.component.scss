@@ -1,4 +1,27 @@
-ion-grid[slot='fixed'] {
+.landing-welcome {
+    position: absolute;
+    width: 100%;
+    top: 10%;
+
+    color: #FAFAFC;
+}
+
+.landing-actions {
+    position: absolute;
     width: 100%;
     top: 60%;
+}
+
+.landing-top {
+    width: 100%;
+    height: 50%;
+    background-color: #3880ff;
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
 }

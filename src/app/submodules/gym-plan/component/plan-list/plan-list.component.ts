@@ -11,21 +11,12 @@ import { HeaderService } from '../../../../common/services/header.service';
 export class PlanListComponent implements AfterViewInit {
     examples: ExampleDto[];
 
-    constructor(private headerService: HeaderService) {
+    constructor(private storage: StorageService, private headerService: HeaderService) {
         console.warn('Workouts');
     }
 
     ngAfterViewInit(): void {
+        this.headerService.setLabel('Workouts list');
         this.headerService.showHeader();
-        // this.loadData();
     }
-
-    /*addData(): void {
-        this.storage.addExample({ label: 'label', description: 'description' });
-        this.loadData();
-    }
-
-    private loadData(): void {
-        this.storage.getExamples().subscribe((examples: ExampleDto[]) => (this.examples = examples));
-    }*/
 }
