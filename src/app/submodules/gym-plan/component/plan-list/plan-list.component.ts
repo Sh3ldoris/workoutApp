@@ -18,5 +18,6 @@ export class PlanListComponent {
     ionViewWillEnter(): void {
         this.headerService.setLabel('WORKOUTS.HEADER');
         this.headerService.showHeader();
+        this.headerService.setBackButton(true);
     }
 }

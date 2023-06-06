@@ -1,5 +1,10 @@
-<ion-header *ngIf="isHeaderVisible | async" class="ion-no-border">
+<ion-header *ngIf="isHeaderVisible$ | async" class="ion-no-border">
     <ion-toolbar color="primary">
-        <ion-title class="ion-text-center"> {{ (headerLabel | async) || '' | translate }} </ion-title>
+        <ion-buttons *ngIf="isBackButtonVisible$ | async" slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title [ngClass]="(isBackButtonVisible$ | async) ? '': 'ion-text-center'">
+            {{ (headerLabel$ | async) || '' | translate }}
+        </ion-title>
     </ion-toolbar>
 </ion-header>

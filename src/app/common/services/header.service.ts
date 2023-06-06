@@ -5,8 +5,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class HeaderService {
+    private isBackButtonVisible: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     private isVisible: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     private headerLabel: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+    isBackButton(): Observable<boolean> {
+        return this.isBackButtonVisible;
+    }
+
+    setBackButton(visible: boolean): void {
+        this.isBackButtonVisible.next(visible);
+    }
 
     isHeaderVisible(): Observable<boolean> {
         return this.isVisible;

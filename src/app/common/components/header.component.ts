@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderService } from '../services/header.service';
 import { Observable } from 'rxjs';
 
@@ -6,13 +6,10 @@ import { Observable } from 'rxjs';
     selector: 'app-header',
     templateUrl: 'header.component.html',
 })
-export class HeaderComponent implements OnInit {
-    isHeaderVisible: Observable<boolean> = this.headerService.isHeaderVisible();
-    headerLabel: Observable<string> = this.headerService.getLabel();
+export class HeaderComponent {
+    isBackButtonVisible$: Observable<boolean> = this.headerService.isBackButton();
+    isHeaderVisible$: Observable<boolean> = this.headerService.isHeaderVisible();
+    headerLabel$: Observable<string> = this.headerService.getLabel();
 
     constructor(private headerService: HeaderService) {}
-
-    ngOnInit(): void {
-        console.warn('Header init');
-    }
 }
