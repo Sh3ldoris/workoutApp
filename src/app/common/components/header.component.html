@@ -1,5 +1,5 @@
 <ion-header *ngIf="isHeaderVisible | async" class="ion-no-border">
     <ion-toolbar color="primary">
-        <ion-title class="ion-text-center"> {{ headerLabel | async }} </ion-title>
+        <ion-title class="ion-text-center"> {{ (headerLabel | async) || '' | translate }} </ion-title>
     </ion-toolbar>
 </ion-header>

@@ -3,7 +3,7 @@
     width: 100%;
     top: 10%;
 
-    color: #FAFAFC;
+    color: var(--ion-background-color);
 }
 
 .landing-actions {
@@ -15,7 +15,7 @@
 .landing-top {
     width: 100%;
     height: 50%;
-    background-color: #3880ff;
+    background-color: var(--ion-color-primary);
     position: relative;
 }
 
@@ -25,3 +25,8 @@ svg {
     bottom: -1px;
     width: 100%;
 }
+
+/*ion-img::part(image) {
+    width: 50%;
+    align-items: center;
+}*/

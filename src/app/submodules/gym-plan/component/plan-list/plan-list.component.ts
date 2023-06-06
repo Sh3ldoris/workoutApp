@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ExampleDto } from '../../../../home/object/example.interface';
 import { StorageService } from '../../../../common/services/storage.service';
 import { HeaderService } from '../../../../common/services/header.service';
@@ -8,15 +8,15 @@ import { HeaderService } from '../../../../common/services/header.service';
     templateUrl: 'plan-list.component.html',
     styleUrls: ['plan-list.component.scss'],
 })
-export class PlanListComponent implements AfterViewInit {
+export class PlanListComponent {
     examples: ExampleDto[];
 
     constructor(private storage: StorageService, private headerService: HeaderService) {
         console.warn('Workouts');
     }
 
-    ngAfterViewInit(): void {
-        this.headerService.setLabel('Workouts list');
+    ionViewWillEnter(): void {
+        this.headerService.setLabel('WORKOUTS.HEADER');
         this.headerService.showHeader();
     }
 }

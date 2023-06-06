@@ -10,10 +10,15 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 import { AppCommonModule } from './common/app-common.module';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { EnTranslation } from './translation/i18n/en.json';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
+        TranslateModule.forRoot({
+            defaultLanguage: 'en',
+        }),
         BrowserModule,
         IonicModule.forRoot(),
         AppRoutingModule,
@@ -26,4 +31,8 @@ import { AppCommonModule } from './common/app-common.module';
     providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+    constructor(private translateService: TranslateService) {
+        this.translateService.setTranslation('en', EnTranslation.translations);
+    }
+}

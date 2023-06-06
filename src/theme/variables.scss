@@ -2,9 +2,7 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
-
-@import "bootstrap";
-
+@import "bootstrap/dist/css/bootstrap.css";
 :root {
     body {
         --ion-background-color: #FAFAFC;
