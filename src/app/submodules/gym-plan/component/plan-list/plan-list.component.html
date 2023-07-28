@@ -1,21 +1,34 @@
 <ion-content [fullscreen]="true">
 
-    <ion-card class="ion-activatable ripple-parent rounded-rectangle" color="white">
+    <ion-card class="ion-activatable ripple-parent rounded-rectangle" color="light">
         <ion-ripple-effect></ion-ripple-effect>
 
         <ion-grid>
             <ion-row>
-                <ion-col size="8">
+                <ion-col size="9">
                     <ion-card-header>
                         <ion-card-title class="font-weight-bold">Strength plan</ion-card-title>
-                        <ion-card-subtitle>8 weeks</ion-card-subtitle>
+                        <ion-card-subtitle>
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            19.6.'23 - 19.8.'23 (8 weeks)
+                        </ion-card-subtitle>
                     </ion-card-header>
 
                     <ion-card-content>
-                        <ion-text class="fs-14 fs-md-16">This plan provides strength and compounds exercise. Its good to build strength and muscles.</ion-text>
+                        <ion-text>This plan provides strength and compounds exercise. Its good to build strength and
+                            muscles.
+                        </ion-text>
                     </ion-card-content>
                 </ion-col>
-                <ion-col size="4"></ion-col>
+                <ion-col size="3">
+                    <div class="d-flex h-100 align-content-center">
+                        <ion-img
+                            src="../assets/activities/gym-light.png"
+                            alt="The Gym Planner logo transparent"
+                        ></ion-img>
+                    </div>
+
+                </ion-col>
             </ion-row>
         </ion-grid>
     </ion-card>
