@@ -1,8 +1,13 @@
 <ion-header *ngIf="isHeaderVisible$ | async" class="ion-no-border">
     <ion-toolbar color="primary">
-        <ion-buttons *ngIf="isBackButtonVisible$ | async" slot="start">
-            <ion-back-button defaultHref="home"></ion-back-button>
-        </ion-buttons>
+        <ng-container *ngIf="isBackButtonVisible$ | async">
+            <ion-buttons *ngIf="!(backLocation$ | async)" slot="start">
+                <ion-back-button defaultHref="home"></ion-back-button>
+            </ion-buttons>
+            <ion-buttons *ngIf="backLocation$ | async as location" slot="start">
+                <ion-back-button defaultHref="home" (click)="goBack(location)"></ion-back-button>
+            </ion-buttons>
+        </ng-container>
         <ion-title [ngClass]="(isBackButtonVisible$ | async) ? '': 'ion-text-center'">
             {{ (headerLabel$ | async) || '' | translate }}
         </ion-title>
