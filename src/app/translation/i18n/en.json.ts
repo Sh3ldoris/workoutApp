@@ -9,6 +9,9 @@ export class EnTranslation {
         },
         WORKOUTS: {
             HEADER: 'Workouts list',
+            NEW: {
+                INFO: 'Workout basic information',
+            },
         },
     };
 }

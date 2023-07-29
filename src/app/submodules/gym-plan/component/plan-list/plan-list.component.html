@@ -1,5 +1,12 @@
 <ion-content [fullscreen]="true">
 
+    <!-- Add workout button-->
+    <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+        <ion-fab-button color="primary" [routerLink]="['/' + mainRoute.NEW_WORKOUT + '/' + mainRoute.BASIC_INFORMATION]">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
     <ion-card class="ion-activatable ripple-parent rounded-rectangle" color="light">
         <ion-ripple-effect></ion-ripple-effect>
 

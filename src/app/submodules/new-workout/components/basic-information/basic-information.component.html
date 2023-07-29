@@ -1,0 +1,21 @@
+<ion-grid #info class="workout-info">
+    <ion-row class="ion-justify-content-center ion-text-center">
+        <ion-col size="6"><h1>{{'WORKOUTS.NEW.INFO' | translate }}</h1></ion-col>
+    </ion-row>
+</ion-grid>
+<ion-grid #inputs class="info-inputs">
+    <ion-row class="ion-justify-content-center">
+        <ion-col size="10" size-md="6">
+            <ion-item class="ion-text-center">
+                <ion-input placeholder="Workout name" type="text" clear-input="true" autofocus="true"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+        <ion-col size="10" size-md="6">
+            <ion-item class="ion-text-center">
+                <ion-textarea placeholder="Workout description" type="text"></ion-textarea>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-grid>

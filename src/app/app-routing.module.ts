@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('./submodules/gym-plan/gym-plan.module').then((m) => m.GymPlanModule),
     },
     {
+        path: 'new-workout',
+        loadChildren: () => import('./submodules/new-workout/new-workout.module').then((m) => m.NewWorkoutPageModule),
+    },
+    {
         path: '',
         redirectTo: MainRoute.HOME,
         pathMatch: 'full',
